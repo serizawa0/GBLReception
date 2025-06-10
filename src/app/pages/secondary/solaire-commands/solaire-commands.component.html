@@ -1,0 +1,11 @@
+<div class="flex column">
+    @for (item of commands; track $index) {
+        <div class="flex column">
+            <div class="flex row">
+                <h1>{{ item.nom }}</h1>
+                <p>{{ item.prenom }}</p>
+            </div>
+            <h1>{{ item.email }}</h1>
+        </div>
+    }
+</div>

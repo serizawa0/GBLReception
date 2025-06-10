@@ -1,0 +1,98 @@
+html,body{
+    display: flex;
+}
+
+.date{
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: rgba($color: #fff, $alpha: 1.0);
+    cursor: pointer;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+}
+.date:hover{
+    background: rgba($color: #ddd, $alpha: 1.0);
+}
+
+.days{
+    padding: 0.25em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.month-but{
+    transition: 0.5s;
+    border: none;
+    background: #ddd;
+    border-radius: 0.1em;
+    padding: 0.5em;
+    cursor: pointer;
+}
+.month-but:hover{
+    background: #ccc;
+}
+
+.year-input{
+    display: flex;
+    font-size: inherit;
+    padding: 1em;
+    border: none;
+    background: #ddd;
+}
+.year-input * {
+    height: 100%;
+
+}
+
+.isSelected{
+    background: #003073;
+    color: #fff;
+}
+
+.year-affichage{
+    background: #eee;
+    padding: 1.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.formulaire{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba($color: #000, $alpha: 0.8);
+}
+.datepicker-row{
+    // height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    align-items: stretch;
+    transition: transform 0.5s ease;
+    background: #fff;
+    padding: 1em;
+}
+.datepicker-row .datepicker-element{
+    width: 100%;
+    // background: #000;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 50vh;
+    color: #fff;
+    // overflow: hidden;
+}
+
+.datepicker-row.shifted{
+    transform: translateX(-100vw);
+}
+
+.cadre {
+  width: 100%;
+  height: 100%;
+}

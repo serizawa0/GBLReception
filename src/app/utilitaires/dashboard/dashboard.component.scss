@@ -1,0 +1,20 @@
+
+
+.ligne-gantt{
+    min-height: 5vh;
+}
+
+
+
+.case-gantt{
+    background: #eee;
+    height: 100%;
+}
+.isInRange{
+    background: red;
+}
+.affiche-date{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #fff;
+}

@@ -1,0 +1,24 @@
+.principal{
+
+}
+
+
+
+.header{
+    background: rgba($color: #172630, $alpha: 1);
+    padding: 1em;
+    backdrop-filter: blur(1px);
+    flex-shrink: 0;
+
+}
+*{
+    color: #fff;
+}
+
+.layout{
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}

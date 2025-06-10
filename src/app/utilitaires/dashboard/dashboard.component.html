@@ -1,0 +1,34 @@
+<div class="flex column">
+    <h1>{{ projet.name }}</h1>
+    <table>
+        <tr>
+            <td></td>
+            <td>
+                <div class="grid" [ngStyle]="{ 'grid-template-columns': gridTemplateColumns }">
+                    @for (date of projet.dates; track $index) {
+                        <p class="affiche-date">{{ date | date: 'dd-MM' }}</p>
+                    }
+                </div>
+            </td>
+        </tr>
+        @for (site of projet.sites; track $index) {
+            <tr>
+                <td>
+                    {{ site.name }}
+                </td>
+                <td class="td-gantt">
+                    <div class="ligne-gantt grid" [ngStyle]="{ 'grid-template-columns': gridTemplateColumns }">
+                    @for (date of projet.dates; track $index) {
+                        <section class="case-gantt" [class.isInRange]="isInRange(site,date)">
+                            
+                        </section>
+                    }
+                    </div>
+                </td>
+            </tr>
+            
+        }
+    </table>
+    <div class="flex column">
+    </div>
+</div>

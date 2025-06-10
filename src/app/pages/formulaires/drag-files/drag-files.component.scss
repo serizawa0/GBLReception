@@ -1,0 +1,19 @@
+.drop-zone{
+    padding: 3em;
+    border-radius: 1em;
+}
+
+.drop-zone.hovering {
+  animation: clignotement 2s infinite;
+}
+@keyframes clignotement {
+  0%{
+    background: #fff;
+  }
+  50%{
+    background: #ddd;
+  }
+  100%{
+    background: #fff;
+  }
+}

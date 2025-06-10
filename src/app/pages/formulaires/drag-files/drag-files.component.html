@@ -1,0 +1,11 @@
+<div class="center contenu-dialog">
+    <div class="drop-zone" (dragover)="onDragOver($event)"  (dragleave)="onDragLeave($event)"  (drop)="onDrop($event)"  [class.hovering]="isHovering">
+        <h1>Glisser les fichiers dans cette zone</h1>
+        <div class="flex column">
+            @for (item of files; track $index) {
+                <p>{{ item.name }}</p>
+            }
+            <button (click)="valider()">Terminer</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<p>caisse works!</p>
+<div class="grid grid-2">
+    <div class="flex column">
+        <h1>Demande en attente d'approbation</h1>
+        <div class="grid grid-3">
+            @for (facture of facturesEnAttenteApprobation; track $index) {
+                <div class="flex column">
+                    <div class="flex column facture-card" (click)="openDetails(facture)">
+                        <p>{{ facture.date | date:'dd-MM' }}</p>
+                        <h1>{{ facture.titre }}</h1>
+                        <h2>{{ facture.total }}</h2>
+                    </div>
+                    @if (checkAutorisation(0)) {<button (click)="approuverFacture(facture)">Valider</button>}
+                </div>
+            }
+        </div>
+        <button (click)="demandeApprobation()">Demande d'approbation</button>
+    </div>
+    <div class="flex column">
+        <h1>Demande en attente de sortie</h1>
+        <div class="grid grid-2">
+            <div class="flex column gap-05">
+                <h1>Approuvée</h1>
+                @for (facture of facturesEnAttenteApprouvee; track $index) {
+                    <div class="flex column" >
+                        <div class="flex column facture-card" (click)="openDetails(facture)">
+                            <p>{{ facture.date | date:'dd-MM' }}</p>
+                            <h1>{{ facture.titre }}</h1>
+                            <h2>{{ facture.total }}</h2>
+                        </div>
+                        @if (checkAutorisation(1)) {<button (click)="validerFacture(facture)">Valider</button>}
+                    </div>
+                }
+            </div>
+            <div class="flex column gap-05">
+                <h1>Simple</h1>
+                @for (facture of facturesEnAttenteSimple; track $index) {
+                    <div class="flex column">
+                        <div class="flex column facture-card" (click)="openDetails(facture)">
+                            <p>{{ facture.date | date:'dd-MM' }}</p>
+                            <h1>{{ facture.titre }}</h1>
+                            <h2>{{ facture.total }}</h2>
+                        </div>
+                        @if (checkAutorisation(1)) {<button (click)="validerFacture(facture)">Valider</button>}
+                    </div>
+                }
+            </div>            
+        </div>
+
+        <button (click)="demandeSimple()">Demande Simple</button>
+    </div>
+    <div class="flex column">
+        <h1>Demande Validées</h1>
+        <div class="grid grid-3">
+            @for (facture of facturesValides; track $index) {
+                <div class="flex column facture-card" (click)="openDetails(facture)">
+                    <p>{{ facture.date | date:'dd-MM' }}</p>
+                    <h1>{{ facture.titre }}</h1>
+                    <h2>{{ facture.total }}</h2>
+                </div>
+            }
+        </div>
+    </div>
+    <!-- @if (checkAutorisation(1)) { -->
+    <!-- } -->
+</div>

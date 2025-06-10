@@ -1,0 +1,36 @@
+<div class="center contenu-dialog">
+    <form [formGroup]="formSite">
+        <div class="flex column">
+            <div class="center">
+                <div class="flex column">
+                    <h1 class="self-center">{{ projet.name }}</h1>
+                    <div class="flex row gap-05">
+                        <h1>{{ projet.dateDebut | date: 'dd/MM/yyyy' }} -> </h1>
+                        <h1>{{ projet.dateFin | date: 'dd/MM/yyyy' }}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="flex row">
+                <p>Site: </p>
+                <input type="text" name="" id=""formControlName="name">
+            </div>
+            <div class="flex row">
+                <p>Code: </p>
+                <input type="text" name="" id=""formControlName="code">
+            </div>
+            <div class="flex row case-form space-between">
+                <p class="form-input">{{ startDate | date: 'dd/MM/yyyy' }}-{{ endDate | date: 'dd/MM/yyyy' }}</p>
+                <i class="material-icons">calendar_today</i>
+            </div>
+            <div class="center">
+                    <div class="flex row space-between stretch">
+                        <app-daterangepicker (dateEmitter)="getStart($event)"></app-daterangepicker>
+                        <app-daterangepicker (dateEmitter)="getEnd($event)"></app-daterangepicker>
+                    </div>
+                </div>
+            <button (click)="valider()">Valider</button>
+            <button (click)="cancel()">Annuler</button>
+        </div>
+    </form>
+</div>
+

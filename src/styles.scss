@@ -1,0 +1,579 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #000000;
+}
+
+body{
+    background: #ddd;
+}
+
+.padding-025{
+    padding: 0.25em;
+}
+
+.layout{
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    justify-content: end;
+}
+.layout:nth-child(2){
+    height: 100%;
+}
+
+.min-width-10vw{
+    min-width: 10vw;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex.all1 *{
+    flex: 1;
+}
+.flex-2{
+    flex: 2;
+}
+.self-center{
+    justify-self: center;
+}
+.self-right{
+    justify-self: right;
+    align-self: flex-end;
+}
+.self-left{
+    justify-self: left;
+    align-self: baseline;
+}
+.align-center{
+    align-items: center;
+}
+.grid{
+    display: grid;
+}
+.grid-2{
+    gap: 2em;
+    grid-template-columns: 1fr 1fr;
+}
+.grid-3{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-4{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid-5{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.flex.column{
+    flex-direction: column;
+}
+.flex.column.gap-2{
+    gap: 2em;
+}
+.flex.column.gap-1{
+    gap: 1em;
+}
+
+.flex.column.centered{
+    align-items: center;
+}
+.flex.row{
+    flex-direction: row;
+}
+.flex.row.space-between{
+    justify-content: space-between;
+}
+
+.flex.row.full{
+    align-items: start;
+    justify-content: space-evenly;
+    gap: 1em;
+    // flex:1;
+    // justify-self: start;
+}
+.flex.row.full *{
+    flex: 1;
+    padding: 0.5em;
+}
+
+.flex.row.align-items-center{
+    align-items: center;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.stretch{
+    align-items: stretch;
+}
+
+.grid{
+    display: grid;
+}
+.grid.grid-2{
+    grid-template-columns: 1fr 1fr;
+}
+.grid.grid-3{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.grid.grid-7{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.padding-2{
+    // padding: 2em;
+}
+
+.fond{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.fond .bloc{
+    padding: 5em 2em;
+    background: #fff;
+    border-radius: 1em;
+}
+
+.gap-05{
+    gap: 0.5em;
+}
+
+.gap-1{
+    gap: 1em;
+}
+
+.gap-2{
+    gap: 2em;
+}
+.gap-2px{
+    gap:2px
+}
+ .input-zone{
+    border-bottom: 2px solid #000;
+    width: 20vw;
+ }
+ .input-zone-2{
+    // min-width: 10vw;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: 2px solid #ddd;
+ }
+ .input{
+    background: none;
+    border: none;
+    width: 20vw;
+ }
+ .input:focus{
+    border: none;
+    outline: none;
+    background: none;
+ }
+ .input:valid{
+    background:none;
+ }
+
+ .input-2{
+    background: none;
+    border: none;
+    padding-left: 0.25em;
+ }
+ .input-2:focus{
+    border: none;
+    outline: none;
+    background: none;
+ }
+ .input-2:valid{
+    background:none;
+ }
+ .input-2:autofill{
+    background:#000;
+ }
+ .input-button{
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 1em 1.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background: #273F4F;
+    transition: 1s;
+ }
+
+ .input-button:hover{
+    background: #37586e;
+ }
+
+ .input-button *{
+    color: #fff;
+ }
+
+ .send-button{
+    border: none;
+    // background: #003968;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5em;
+ }
+ .send-button *{
+    color: #fff;
+    font-size: larger;
+ }
+
+ .nav-button{
+    background: #273F4F;
+    border: none;
+    padding: 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: 0.5s;
+ }
+ .nav-button:hover{
+    background: #314f63;
+ }
+
+ .center{
+    display: flex;
+    justify-content: center;
+ }
+ .exterieur{
+    width: 100vw;
+    height: 100vh;
+    // background: url(../public/back5.jpeg);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+ }    
+.back{
+    width: 100vw;
+    background: rgba($color: #fff, $alpha: 0.5);
+    height: 75vh;
+    backdrop-filter: blur(10px);
+    // overflow-x: hidden;
+}
+
+.full-height *{
+    // flex: 1;
+}
+
+.valid-but{
+    transition: 0.5s;
+    cursor: pointer;
+    border: none;
+    background: #003454;
+    color: #fff;
+    font-weight: bold;
+}
+.valid-but:hover{
+    background: #004c7b;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.contenu-dialog{
+    background: #fff;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+.form-input{
+    background: none;
+    border: none;
+    min-width: 15vw;
+    font-weight: bold;
+}
+.form-input:focus{
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.case-form{
+    padding: 0.5em;
+    border: 2px solid #000;
+    border-radius: 0.5em;
+}
+
+.button{
+    padding: 1em;
+    border: none;
+    cursor: pointer;
+    background: #eee;
+    border-radius: 0.5em;
+}
+.button.align-center{
+    display: flex;
+    align-items: center;
+}
+.button.validation{
+    min-width: 10vw;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 1em 1.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.button.validation.valid{
+    background: #003b72;
+}
+.button.validation.valid:hover{
+    background: #0055a5;
+}
+
+.button.validation.cancel{
+    background: #ff0000;
+}
+
+.button.validation.cancel:hover{
+    background: #b90000;
+}
+
+.button.validation *{
+    color: #fff;
+}
+
+.select{
+    border-radius: 0.5em;
+}
+
+.select:focus{
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.select option:hover{
+    background: #004162;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #888;
+}
+
+.item-space{
+    min-height: 20vh;
+}
+
+.tr-item{
+    // background: #000;
+    border-bottom: 2px solid #ddd;
+}
+
+.td-element{
+    border-left: 2px solid #aaa;
+    border-right: 2px solid #aaa;
+    padding: 0.5em;
+}
+
+.fin-item{
+    margin-bottom: 2em;
+}
+.full-width{
+    width: 100%;
+}
+.full-height{
+    height: 100%;
+}
+
+.flex-end{
+    justify-content: end;
+}
+.facturation-table{
+    border: none;
+    border-collapse: collapse;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+.label-row{
+    background: #000000;
+    padding: 0.5em;
+}
+
+.label{
+    border: none;
+    color: #fff;
+}
+
+.affiche-total{
+    margin-bottom: 2em;
+    border-bottom: 1px solid #000;
+}
+
+.message-case{
+    background: #fff;
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.other-message{
+    align-self: baseline;
+    background: #eee;
+}
+.my-message{
+    align-self: flex-end;   
+}
+.my-message .message-case{
+    background: #001d37;
+}
+.my-message .date{
+    display: flex;
+    justify-content: end;
+    color: #555;
+}
+.my-message *{
+    color: #fff;
+}
+.case-receiver{
+    background: #eee;
+    padding: 1em;
+    box-shadow:2px 2px 2px 2px rgba(0, 0, 0, 0.05);
+}
+.case-messages{
+    // background: #fff;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.input-file{
+    display: none;
+}
+
+.text-area{
+    grid-column: span 3;
+    resize: none;
+    border: none;
+    background: #fff;
+    padding: 0.5em;
+    border-radius: 0.25em;
+}
+.text-area:focus{
+    border: none;
+    outline: none;
+}
+
+.max-height-80vh{
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.case-ecriture{
+    padding: 1em;
+    background: #eee;
+}
+
+.case-Majuscule{
+    padding: 0.25em;
+    width: 1em;
+    height: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #efd;
+    border-radius: 50%;
+}
+
+.case-user{
+    background: #fff;
+    margin: 0.25em;
+    border-radius: 0.10em;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+    padding: 0.25em;
+    gap: 0.25em;
+    cursor: pointer;
+}
+.case-user h1{
+    color: #fff;
+}
+
+.case-user:hover{
+    transform: scale(1.05);
+    background: #f5f5f5;
+}
+.case-recherche{
+    background: #fff;
+    padding: 0.75em;
+}
+.case-titre{
+    background: #fff;
+    margin-bottom: 3px;
+    padding: 0.5em;
+}
+
+
+.input-recherche{
+    background: none;
+    border: none;
+}
+.input-recherche:focus{
+    outline: none;
+}
+
+.part-message-button{
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    cursor: pointer;
+}
+.part-message-button *{
+    transition: 0.5s;
+}
+
+.part-message-button:hover *{
+    color: #183b7c;
+    font-weight: bolder;
+}
+
+
+.flex.row .text-area-zone{
+    flex: 4;
+}
+
+.text-area-zone{
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+
+}
+.text-area-zone textarea{
+    flex: 5;
+}
+
+.case-user-avatar{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}
+
+.email{
+    color: #555;
+}

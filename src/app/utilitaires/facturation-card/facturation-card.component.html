@@ -1,0 +1,29 @@
+<div class="contenu-dialog">
+    <div class="flex column gap-2">
+        <div class="flex column">
+            <div class="flex row gap-2">
+                <h1>{{ facture?.date | date:'dd-MM' }}</h1>
+                <h1>{{ facture?.titre }}</h1>
+            </div>
+            <h1>Demandeur: {{ facture?.user?.name }}</h1>
+            <table class="facturation-table">
+                <tr class="label-row">
+                    <td class="label">Produit</td>
+                    <td class="label">Quantité</td>
+                    <td class="label">Montant</td>
+                </tr>
+                @for (item of facture?.elements; track $index) {
+                    <tr [class.isPair]="isPair($index)">
+                        <td class="td-element min-width-10vw">{{ item.libelle }}</td>
+                        <td class="td-element min-width-10vw">{{ item.nombre }}</td>
+                        <td class="td-element min-width-10vw">{{ item.montant }}</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="flex column gap-1">
+            <h1>Total: {{ facture?.total }}</h1>
+        </div>
+
+    </div>
+</div>

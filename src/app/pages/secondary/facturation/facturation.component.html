@@ -1,0 +1,60 @@
+<div class="contenu-dialog">
+    <div class="flex column">
+        <h1>Facturation</h1>
+        <div class="container">
+            <form [formGroup]="factureForm">
+                <div class="flex column">
+                    <div class="flex row input-zone-2">
+                        <label for="titre">Titre: </label>
+                        <input type="text" name="" id="titre" formControlName="titre" class="input">
+                    </div>
+                    <div class="flex column item-space border-bottom" formArrayName="elements">
+                        <table class="facturation-table" border="0">
+                            <tr class="label-row">
+                                <td class="label">Libellé</td>
+                                <td class="label">Nombre</td>
+                                <td class="label">Montant</td>
+                                <td class="label">Action</td>
+                            </tr>
+                            @for (ligne of lignes.controls;track ligne.get('id')?.value; let i = $index;) {
+                            <tr [formGroupName]="i" class="tr-item">
+                                <td class="td-element">
+                                    <input type="text" name="" id="" formControlName="libelle" class="input-2">
+                                </td>
+                                <td class="td-element">
+                                    <input type="number" name="" id=""formControlName='nombre' class="input-2">
+                                </td>
+                                <td class="td-element">
+                                    <input type="number" name="" id="" formControlName="montant" class="input-2" (change)="calculTotal()">
+                                </td>
+                                <td class="td-element">
+                                    <button (click)="retirerLigne(i)"><i class="material-icons">delete</i></button>
+                                </td>
+                            </tr>
+                        }
+                            <tr class="fin-item">
+                                <td colspan="4">
+                                    <button (click)="ajoutLigne()" class="full-width"><i class="material-icons">add</i></button>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                    <div class="flex column">
+                        <div class="flex row flex-end">
+                            <p class="affiche-total">Total: {{ total }}</p>
+                        </div>
+                        <div class="flex row gap-05 flex-end">
+                            <button (click)="cancel()" class="button validation cancel">
+                                <p>Annuler</p>
+                            </button>
+                            <button (click)="validerFacture()" class="button validation valid">
+                                <p>Valider</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>    
+</div>

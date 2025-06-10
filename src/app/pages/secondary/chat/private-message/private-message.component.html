@@ -1,0 +1,43 @@
+<div class="flex column  full-height case-messages">
+    <div class="flex column">
+        <div class="case-receiver">
+            <div class="flex row align-items-center gap-1">
+                <img [src]="getPhoto()" alt="" class="case-user-avatar">
+                <div class="flex.column">
+                    <h1>{{ receiver?.name }}</h1>
+                    <p class="email">{{ receiver?.email }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex column gap-05 padding-025 max-height-80vh" #messageContainer>
+            @for (mess of message; track $index) {
+                <div class="flex column" [class.my-message]="isFromMe(mess)" [class.other-message]="!isFromMe(mess)">
+                    <p class="date">{{ getTime(mess) }}</p>
+                    <div class="message-case" >
+                        <p>{{ mess.content }}</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="flex column align-center case-ecriture">
+        <form [formGroup]="messageForm" class="full-width full-height">
+            <div class="flex row">
+                <div class="text-area-zone">
+                    <textarea name="" id="" cols="30" rows="1" aria-multiline="true" formControlName="content" class="text-area" placeholder="Ecrire votre message..."></textarea>
+                    <label for="fichier" class="part-message-button">
+                        <i class="material-icons">attach_file</i>
+                    </label>
+                    <!-- <div  class="part-message-button">
+                        <i class="material-icons">upload_file</i>
+                    </div> -->
+                    <input type="file" name="" id="fichier" class="input-file" (change)="onFileSelect($event)" multiple>
+                </div>
+                <button (click)="send()" class="input-button">
+                    <p>Envoyer</p>
+                    <i class="material-icons">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="fond">
+    <div class="bloc">
+        <div class="flex column gap-2">
+            <div class="center">
+                <h1>Connexion</h1>
+            </div>
+            <form [formGroup]="loginForm">
+                <div class="flex column gap-1">
+                    <div class="flex column">
+                        <label for="userName">Login: </label>
+                        <div class="flex row row gap-1 input-zone">
+                            <i class="material-icons">person</i>
+                            <input type="text" name="" id="userName" formControlName="userName" class="input">
+                        </div>
+                    </div>
+                    <div class="flex column">
+                        <label for="userPassword">Mot de passe: </label>
+                        <div class="flex row gap-1 input-zone">
+                            <i class="material-icons">key</i>
+                            <input type="password" name="" id="userPassword" formControlName="userPassword"class="input">
+                        </div>
+                    </div>
+                    <button (click)="validate()" class="input-button">
+                        <p>Connexion</p>
+                        <i class="material-icons">input</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

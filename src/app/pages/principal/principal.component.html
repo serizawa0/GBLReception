@@ -1,0 +1,18 @@
+<div class="exterieur principal">
+    <div class="flex column header">
+        <h1>{{ userEnCours.email }}</h1>
+        <div class="center">
+            <div class="flex row gap-05">
+                <button (click)="toCaisse()" class="nav-button">Caisse</button>
+                <button (click)="toStock()" class="nav-button">Stock</button>
+                <button (click)="toProjects()" class="nav-button">Projets</button>
+                <button (click)="toChat()" class="nav-button">Chat</button>
+            </div>
+        </div>
+        <!-- <app-chat></app-chat> -->
+    </div>
+    <div class="layout">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

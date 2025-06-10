@@ -1,0 +1,36 @@
+<div class="datepicker-row" [class.shifted]="isShifted">
+        <div class="flex column space-between">
+            <div class="topGroup">
+                <form [formGroup]="formYearAndMonth">
+                        <div class="flex row space-between">
+                            <button (click)="toPrevMonth()" class="button align-center"><i class="material-icons">arrow_back</i></button>
+                            <div class="flex row gap-05 self-center" >
+                                <!-- <h1>{{ mois[days[8].getMonth()] }}</h1>
+                                <h1>{{ days[8].getFullYear() }}</h1> -->
+                                <select name="" id="" formControlName="month" (change)="changeOnForm()"class="case-form select">
+                                    @for (month of mois; track $index) {
+                                        <option value="{{ $index }}">{{ month }}</option>
+                                    }
+                                </select>
+                                <input type="number" formControlName="year" (change)="changeOnForm()" class="case-form">
+                            </div>
+                            <button (click)="toNextMonth()" class="button"><i class="material-icons">arrow_forward</i></button>
+                        </div>
+                </form>
+                <div class="grid grid-7">
+                    @for (jour of jours; track $index) {
+                        <div class="days">
+                            <h1>{{ jour }}</h1>
+                        </div>
+                    }
+                    @for (date of days; track $index) {
+                        <!-- <button (click)="onDateClick(date)">{{ date.getDate() }}</button> -->
+                        <div class="date" (click)="onDateClick(date)">
+                            {{ date.getDate() }}
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+</div>
+    

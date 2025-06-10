@@ -1,0 +1,20 @@
+<div class="flex column padding-05">
+    <div class="center case-titre">
+        <h1>Messages Privés</h1>
+    </div>
+    <div class="case-recherche flex row gap-05">
+        <i class="material-icons">search</i>
+        <input type="text" name="" id="" (input)="recherche($event)" placeholder="recherche" class="input-recherche">
+    </div>
+    <div class="flex column">
+        @for (user of users; track $index) {
+            <div class="case-user"(click)="intoPrivate(user)">
+                <div class="flex row align-center gap-05">
+                    <!-- <h1 class="case-Majuscule">{{ user.name[0] }}</h1> -->
+                     <img [src]="url+user.avatar" alt="" class="case-user-avatar">
+                    <p>{{ user.name }}</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

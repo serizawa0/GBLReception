@@ -1,0 +1,32 @@
+<div class="flex column">
+    <h1>Documents</h1>
+    <div class="flex column">
+        @for (groupe of groupesFichiers; track $index) {
+            <div class="flex column">
+                <h2>{{ groupe.nomGroup }}</h2>
+                <div class="flex column">
+                    @for (fichier of groupe.fichiers; track $index) {
+                        <p>{{ fichier.name }}</p>
+                    }
+                </div>
+                <button (click)="openDragFiles(groupe)">ajout fichier</button>
+            </div>
+        }
+        @if (groupFormState) {
+            <form [formGroup]="groupForm" (submit)="addGroup()">
+                <div class="flex row">
+                    <select name="" id="" formControlName="nomGroup" (change)="addGroup()">
+                        @for (cat of categories; track $index) {
+                            <option [value]="cat.nomCat">{{ cat.nomCat }}</option>
+                        }
+                    </select>
+                    <!-- <input type="submit" value="valider"> -->
+                </div>
+            </form>
+        }
+        @else {
+            <button (click)="openForm()">+</button>
+        }
+    </div>
+</div>
+
