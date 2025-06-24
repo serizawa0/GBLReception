@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, numberAttribute } from '@angular/core';
 import Panier from '../classes/Panier';
 import { interval, Observable, switchMap } from 'rxjs';
 import InterfaceGravityPanier from '../classes/interfaceGravityPanier';
@@ -12,12 +12,14 @@ import { log } from 'node:console';
 import Utilisateur from '../classes/Utilisateur';
 import interfacePrivateMessage from '../classes/interfaces/interfacePrivateMessage';
 import PrivateMessage from '../classes/sousclasses/PrivateMessage';
+import Project from '../classes/Project';
+import ProjectType from '../classes/ProjectType';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LiaisonBackService {
-  url = 'http://localhost:3000/'
+  url = 'http://192.168.88.25:3000/'
   gravityCommands:Panier[]
   constructor(
     private http:HttpClient
@@ -65,8 +67,21 @@ async getPrivateMessages(couple:PrivateMessage){
     
   }
   async postFileGroup(groupName:string){
-  return this.http.post(this.url+'GBL/createFileGroup',groupName)
+    console.log(groupName);
+    const data = {  data:groupName }
+    return this.http.post(this.url+'GBL/createFileGroup',data)
   }
+  async getProjectTypes(){
+    return this.http.get<ProjectType[]>(this.url+'GBL/getProjectTypes')
+  }
+  async getProjects(){
+    return this.http.get<Project[]>(this.url+'GBL/getProjects')
+  }
+  async postProject(typeId:number, client:string){
+    const data = { typeId:typeId, client:client }
+    return this.http.post<Project[]>(this.url+'GBL/createProject', data)
+  }
+  
 }
 
 

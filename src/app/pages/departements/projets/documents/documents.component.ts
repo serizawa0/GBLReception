@@ -47,7 +47,7 @@ export class DocumentsComponent {
     const formValue  = this.groupForm.get('nomGroup')?.value
     if(formValue){
       const newGroup= new FichierGroup(formValue)
-    // console.log(newGroup);
+      // console.log(newGroup);
       this.liaisonBack.postFileGroup(newGroup.nomGroup).then(data => data.subscribe(
       element => {
         console.log(element);

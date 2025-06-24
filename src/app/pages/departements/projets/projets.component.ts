@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, Input } from '@angular/core';
 import Projet from '../../../classes/Projet';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NewProjetComponent } from '../../formulaires/new-projet/new-projet.component';
@@ -10,6 +10,7 @@ import { DocumentsComponent } from './documents/documents.component';
 import { PlanningComponent } from './planning/planning.component';
 import { PreparationComponent } from './preparation/preparation.component';
 import { TravauxComponent } from './travaux/travaux.component';
+import Project from '../../../classes/Project';
 
 @Component({
   selector: 'app-projets',
@@ -20,6 +21,7 @@ import { TravauxComponent } from './travaux/travaux.component';
   styleUrl: './projets.component.scss'
 })
 export class ProjetsComponent implements OnInit{
+  @Input() projet:Project = new Project(0,0,'')
   today:Date = new Date()
   projetEnCours:Projet
   private overlayRef:OverlayRef|null = null
@@ -30,6 +32,8 @@ export class ProjetsComponent implements OnInit{
   ){
     this.projetEnCours = new Projet(0,'',new Date(),new Date())
     console.log(new Date(2025,this.today.getMonth()-1,0).getDate())
+    console.log((this.projet));
+    
   }
   projets:Projet[] = [
   ]

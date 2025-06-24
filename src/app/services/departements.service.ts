@@ -3,6 +3,8 @@ import facture from '../classes/sousclasses/Facture';
 import Utilisateur from '../classes/Utilisateur';
 import { BehaviorSubject } from 'rxjs';
 import { LiaisonBackService } from '../backService/liaison-back.service';
+import Project from '../classes/Project';
+import ProjectType from '../classes/ProjectType';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,10 @@ export class DepartementsService {
   private facturedataSource = new BehaviorSubject<facture[]>([])
   public factureDataS = this.facturedataSource.asObservable()
   public dataS = this.dataSource.asObservable()
+  private project = new BehaviorSubject<Project[]>([])
+  public projectDS = this.project.asObservable()
+  private projectType = new BehaviorSubject<ProjectType[]>([])
+  public projectTypeDS = this.projectType.asObservable()
 
   factures:facture[]
   constructor(

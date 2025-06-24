@@ -13,7 +13,7 @@ import { log } from 'console';
 })
 export class SocketService {
   private socket!:Socket
-  private readonly URL = 'http://localhost:3000';
+  private readonly URL = 'http://192.168.88.25:3000';
   constructor() {
     // this.socket = io(this.URL,{
     //   transports:['websocket']

@@ -1,4 +1,20 @@
-<p>project-section works!</p>
-@for (projet of projets; track $index) {
-    <app-projets></app-projets>
-}
+<div class="flex column">
+    <h1>Projets</h1>
+    <form [formGroup]="formProject">
+        <div class="flex column">
+            <div class="center">
+                <div class="flex column">
+                    <h1>Sélectionner le type de projet</h1>
+                    <select name="" id="" (change)="changeOnSelect()" formControlName="type">
+                        @for (c of projectTypes; track $index) {
+                            <option [value]="c.id">{{ c.typeName }}</option>
+                        }
+                    </select>
+                </div>
+            </div>    
+        </div>
+    </form>
+    @for (projet of projets; track $index) {
+        <app-projets></app-projets>
+    }
+</div>
