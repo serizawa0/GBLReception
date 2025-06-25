@@ -12,13 +12,13 @@ export class SelectForGroupedComponent {
   constructor(
     private liaisonBackS:LiaisonBackService
   ){
-    this.liaisonBackS.getGroups(12).then(
-      data => data.subscribe(
-        res => {
-          console.log(res);
+    // this.liaisonBackS.getGroups(12).then(
+    //   data => data.subscribe(
+    //     res => {
+    //       console.log(res);
           
-        }
-      )
-    )
+    //     }
+    //   )
+    // )
   }
 }
